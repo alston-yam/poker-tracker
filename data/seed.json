@@ -1,0 +1,1673 @@
+{
+ "players": [
+  {
+   "name": "Aiden",
+   "account": null
+  },
+  {
+   "name": "Alice",
+   "account": null
+  },
+  {
+   "name": "Alston",
+   "account": null
+  },
+  {
+   "name": "Bowen",
+   "account": null
+  },
+  {
+   "name": "Bruce",
+   "account": "06-0197-0281028-00"
+  },
+  {
+   "name": "Chenyou",
+   "account": "01-0221-0811202-01"
+  },
+  {
+   "name": "Ethan",
+   "account": null
+  },
+  {
+   "name": "Hayden",
+   "account": "12-3077-0050405-00"
+  },
+  {
+   "name": "Henry",
+   "account": "12-3044-0584742-50"
+  },
+  {
+   "name": "Hugo",
+   "account": "12-3025-0502326-50"
+  },
+  {
+   "name": "Jay",
+   "account": "12-3164-0737950-00"
+  },
+  {
+   "name": "Jervis",
+   "account": "02-0223-0061417-66"
+  },
+  {
+   "name": "Justin",
+   "account": "02-0112-0100022-66"
+  },
+  {
+   "name": "Louis",
+   "account": "03-0206-0179528-000"
+  },
+  {
+   "name": "Matt",
+   "account": null
+  },
+  {
+   "name": "William",
+   "account": "12-3274-0638216-00"
+  },
+  {
+   "name": "justins mom",
+   "account": null
+  }
+ ],
+ "games": [
+  {
+   "date": "2024-04-06",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 30.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 18.5,
+     "cashOut": 35.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 23.5,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 18.5,
+     "cashOut": 25.5
+    },
+    {
+     "name": "Justin",
+     "buyIn": 18.5,
+     "cashOut": 38.9
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 28.5,
+     "cashOut": 0.0
+    },
+    {
+     "name": "William",
+     "buyIn": 28.5,
+     "cashOut": 66.6
+    }
+   ]
+  },
+  {
+   "date": "2024-04-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 24.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 18.4
+    },
+    {
+     "name": "William",
+     "buyIn": 25.0,
+     "cashOut": 5.6
+    },
+    {
+     "name": "Aiden",
+     "buyIn": 2.0,
+     "cashOut": 9.0
+    }
+   ]
+  },
+  {
+   "date": "2024-04-24",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 16.25,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 16.45,
+     "cashOut": 28.5
+    },
+    {
+     "name": "Justin",
+     "buyIn": 16.45,
+     "cashOut": 33.6
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 16.45,
+     "cashOut": 3.5
+    }
+   ]
+  },
+  {
+   "date": "2024-04-26",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 18.5,
+     "cashOut": 27.5
+    },
+    {
+     "name": "Louis",
+     "buyIn": 18.5,
+     "cashOut": 5.7
+    },
+    {
+     "name": "Henry",
+     "buyIn": 23.5,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 0.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 0.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "William",
+     "buyIn": 18.5,
+     "cashOut": 45.8
+    }
+   ]
+  },
+  {
+   "date": "2024-04-27",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 15.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 33.55
+    },
+    {
+     "name": "Justin",
+     "buyIn": 15.0,
+     "cashOut": 5.5
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 5.0,
+     "cashOut": 10.95
+    },
+    {
+     "name": "Aiden",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2024-05-31",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 16.75,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 22.0,
+     "cashOut": 10.25
+    },
+    {
+     "name": "Henry",
+     "buyIn": 16.75,
+     "cashOut": 65.5
+    },
+    {
+     "name": "Justin",
+     "buyIn": 26.75,
+     "cashOut": 6.1
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 16.75,
+     "cashOut": 17.15
+    }
+   ]
+  },
+  {
+   "date": "2024-05-31",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 23.5,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 18.5,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 23.5,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 13.5,
+     "cashOut": 102.5
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 23.5,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2024-07-07",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 37.75,
+     "cashOut": 50.25
+    },
+    {
+     "name": "Louis",
+     "buyIn": 0.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 17.75,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 17.75,
+     "cashOut": 50.75
+    },
+    {
+     "name": "Justin",
+     "buyIn": 27.75,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 0.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-01-09",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 25.0,
+     "cashOut": 100.8
+    },
+    {
+     "name": "Louis",
+     "buyIn": 0.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 35.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 25.0,
+     "cashOut": 29.2
+    },
+    {
+     "name": "William",
+     "buyIn": 45.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-01-09",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 70.0,
+     "cashOut": 18.4
+    },
+    {
+     "name": "Louis",
+     "buyIn": 30.0,
+     "cashOut": 29.1
+    },
+    {
+     "name": "Henry",
+     "buyIn": 25.0,
+     "cashOut": 37.9
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 35.0,
+     "cashOut": 52.6
+    },
+    {
+     "name": "William",
+     "buyIn": 15.0,
+     "cashOut": 37.0
+    }
+   ]
+  },
+  {
+   "date": "2025-01-13",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.25,
+     "cashOut": 27.95
+    },
+    {
+     "name": "Louis",
+     "buyIn": 25.25,
+     "cashOut": 28.05
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.25,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.25,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-01-13",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.25,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 10.25,
+     "cashOut": 41.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.25,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.25,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-01-13",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.25,
+     "cashOut": 18.3
+    },
+    {
+     "name": "Louis",
+     "buyIn": 10.25,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 20.25,
+     "cashOut": 16.5
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.25,
+     "cashOut": 16.2
+    }
+   ]
+  },
+  {
+   "date": "2025-01-15",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 15.0,
+     "cashOut": 32.55
+    },
+    {
+     "name": "Henry",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 15.0,
+     "cashOut": 5.2
+    },
+    {
+     "name": "William",
+     "buyIn": 25.0,
+     "cashOut": 37.25
+    }
+   ]
+  },
+  {
+   "date": "2025-01-19",
+   "players": [
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 29.65
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 5.6
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 10.0,
+     "cashOut": 14.75
+    }
+   ]
+  },
+  {
+   "date": "2025-01-19",
+   "players": [
+    {
+     "name": "Henry",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 7.5
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 15.0,
+     "cashOut": 5.25
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 10.0,
+     "cashOut": 52.25
+    }
+   ]
+  },
+  {
+   "date": "2025-01-23",
+   "players": [
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 18.9
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 4.2
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 10.0,
+     "cashOut": 16.9
+    }
+   ]
+  },
+  {
+   "date": "2025-02-06",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 28.95
+    },
+    {
+     "name": "Henry",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 0.0,
+     "cashOut": 3.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 18.9
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 14.35
+    },
+    {
+     "name": "William",
+     "buyIn": 10.0,
+     "cashOut": 2.9
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 10.0,
+     "cashOut": 11.9
+    },
+    {
+     "name": "Hugo",
+     "buyIn": 10.0,
+     "cashOut": 10.0
+    }
+   ]
+  },
+  {
+   "date": "2025-02-06",
+   "players": [
+    {
+     "name": "Henry",
+     "buyIn": 5.0,
+     "cashOut": 2.95
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 5.0,
+     "cashOut": 19.4
+    },
+    {
+     "name": "Justin",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 5.0,
+     "cashOut": 1.2
+    },
+    {
+     "name": "William",
+     "buyIn": 5.0,
+     "cashOut": 1.8
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 5.0,
+     "cashOut": 9.65
+    },
+    {
+     "name": "Hugo",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-02-06",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 30.0,
+     "cashOut": 23.1
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 40.6
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 30.9
+    },
+    {
+     "name": "Hugo",
+     "buyIn": 20.0,
+     "cashOut": 35.4
+    }
+   ]
+  },
+  {
+   "date": "2025-02-11",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 8.0,
+     "cashOut": 12.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 12.0,
+     "cashOut": 24.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 4.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 4.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Jay",
+     "buyIn": 8.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-03-15",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 5.0,
+     "cashOut": 13.2
+    },
+    {
+     "name": "Louis",
+     "buyIn": 10.0,
+     "cashOut": 10.9
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Alston",
+     "buyIn": 5.0,
+     "cashOut": 5.9
+    }
+   ]
+  },
+  {
+   "date": "2025-03-23",
+   "players": [
+    {
+     "name": "Henry",
+     "buyIn": 3.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 2.0,
+     "cashOut": 3.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 3.0,
+     "cashOut": 5.0
+    }
+   ]
+  },
+  {
+   "date": "2025-03-27",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 25.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 8.9
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 36.1
+    }
+   ]
+  },
+  {
+   "date": "2025-03-27",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 5.0,
+     "cashOut": 19.7
+    },
+    {
+     "name": "Louis",
+     "buyIn": 10.0,
+     "cashOut": 15.3
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-03-28",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 25.0,
+     "cashOut": 18.4
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 12.6
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 20.0,
+     "cashOut": 34.0
+    }
+   ]
+  },
+  {
+   "date": "2025-03-30",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.6,
+     "cashOut": 59.51
+    },
+    {
+     "name": "Louis",
+     "buyIn": 25.6,
+     "cashOut": 1.22
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.6,
+     "cashOut": 0.72
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 20.6,
+     "cashOut": 0.72
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.6,
+     "cashOut": 19.6
+    },
+    {
+     "name": "Hugo",
+     "buyIn": 10.6,
+     "cashOut": 14.32
+    },
+    {
+     "name": "Aiden",
+     "buyIn": 10.6,
+     "cashOut": 13.11
+    }
+   ]
+  },
+  {
+   "date": "2025-04-03",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 25.0,
+     "cashOut": 32.7
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 5.0,
+     "cashOut": 7.3
+    }
+   ]
+  },
+  {
+   "date": "2025-04-03",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 15.15
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 17.3
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 9.5
+    },
+    {
+     "name": "Jay",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bowen",
+     "buyIn": 10.0,
+     "cashOut": 8.05
+    }
+   ]
+  },
+  {
+   "date": "2025-04-10",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 10.0,
+     "cashOut": 3.75
+    },
+    {
+     "name": "Justin",
+     "buyIn": 5.0,
+     "cashOut": 19.85
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 5.0,
+     "cashOut": 14.25
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 5.0,
+     "cashOut": 4.45
+    },
+    {
+     "name": "Jay",
+     "buyIn": 20.0,
+     "cashOut": 7.7
+    }
+   ]
+  },
+  {
+   "date": "2025-04-10",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 48.6,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 20.0,
+     "cashOut": 19.5
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 34.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 24.3
+    },
+    {
+     "name": "William",
+     "buyIn": 20.0,
+     "cashOut": 62.2
+    },
+    {
+     "name": "Jay",
+     "buyIn": 6.4,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-04-18",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 4.8
+    },
+    {
+     "name": "Henry",
+     "buyIn": 20.0,
+     "cashOut": 5.35
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 27.4
+    },
+    {
+     "name": "Hugo",
+     "buyIn": 10.0,
+     "cashOut": 12.45
+    }
+   ]
+  },
+  {
+   "date": "2025-04-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 40.0,
+     "cashOut": 50.5
+    },
+    {
+     "name": "Henry",
+     "buyIn": 35.0,
+     "cashOut": 28.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 68.8
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 30.0,
+     "cashOut": 12.7
+    },
+    {
+     "name": "William",
+     "buyIn": 35.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-04-24",
+   "players": [
+    {
+     "name": "Louis",
+     "buyIn": 5.0,
+     "cashOut": 27.4
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 9.95
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 20.0,
+     "cashOut": 17.65
+    }
+   ]
+  },
+  {
+   "date": "2025-04-24",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 30.4
+    },
+    {
+     "name": "Henry",
+     "buyIn": 15.0,
+     "cashOut": 65.8
+    },
+    {
+     "name": "Justin",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 58.8
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "justins mom",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-05-02",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 19.1
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 20.45
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 10.45
+    }
+   ]
+  },
+  {
+   "date": "2025-05-10",
+   "players": [
+    {
+     "name": "Louis",
+     "buyIn": 5.0,
+     "cashOut": 17.1
+    },
+    {
+     "name": "Henry",
+     "buyIn": 5.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 15.0,
+     "cashOut": 7.9
+    }
+   ]
+  },
+  {
+   "date": "2025-05-30",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 69.5
+    },
+    {
+     "name": "Louis",
+     "buyIn": 35.0,
+     "cashOut": 2.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 35.0,
+     "cashOut": 21.1
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 20.0,
+     "cashOut": 57.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 40.0,
+     "cashOut": 45.3
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 30.0,
+     "cashOut": 11.6
+    },
+    {
+     "name": "William",
+     "buyIn": 15.0,
+     "cashOut": 4.3
+    },
+    {
+     "name": "Alice",
+     "buyIn": 20.0,
+     "cashOut": 4.2
+    }
+   ]
+  },
+  {
+   "date": "2025-06-06",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 40.0,
+     "cashOut": 51.7
+    },
+    {
+     "name": "Louis",
+     "buyIn": 40.0,
+     "cashOut": 37.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 40.0,
+     "cashOut": 63.3
+    },
+    {
+     "name": "Justin",
+     "buyIn": 40.0,
+     "cashOut": 60.1
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 40.0,
+     "cashOut": 27.9
+    }
+   ]
+  },
+  {
+   "date": "2025-06-08",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 60.0,
+     "cashOut": 1.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 30.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 40.0,
+     "cashOut": 21.5
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 30.0,
+     "cashOut": 58.1
+    },
+    {
+     "name": "Justin",
+     "buyIn": 30.0,
+     "cashOut": 88.7
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 30.0,
+     "cashOut": 50.7
+    }
+   ]
+  },
+  {
+   "date": "2025-06-13",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 50.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 81.4
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 38.0
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 10.0,
+     "cashOut": 30.6
+    },
+    {
+     "name": "Alice",
+     "buyIn": 30.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-06-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 20.0,
+     "cashOut": 18.2
+    },
+    {
+     "name": "Henry",
+     "buyIn": 35.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 0.0,
+     "cashOut": 1.7
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 91.5
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    }
+   ]
+  },
+  {
+   "date": "2025-06-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 30.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 30.0,
+     "cashOut": 60.0
+    }
+   ]
+  },
+  {
+   "date": "2025-06-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 60.0,
+     "cashOut": 47.8
+    },
+    {
+     "name": "Henry",
+     "buyIn": 0.0,
+     "cashOut": 3.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 60.0,
+     "cashOut": 69.2
+    }
+   ]
+  },
+  {
+   "date": "2025-07-15",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 50.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Louis",
+     "buyIn": 50.0,
+     "cashOut": 97.6
+    },
+    {
+     "name": "Justin",
+     "buyIn": 50.0,
+     "cashOut": 52.4
+    }
+   ]
+  },
+  {
+   "date": "2025-07-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 50.0,
+     "cashOut": 61.8
+    },
+    {
+     "name": "Louis",
+     "buyIn": 70.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 50.0,
+     "cashOut": 108.2
+    }
+   ]
+  },
+  {
+   "date": "2025-07-22",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 50.0,
+     "cashOut": 144.48
+    },
+    {
+     "name": "Louis",
+     "buyIn": 30.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 70.0,
+     "cashOut": 5.52
+    }
+   ]
+  },
+  {
+   "date": "2025-11-04",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 15.8
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 10.0,
+     "cashOut": 14.2
+    }
+   ]
+  },
+  {
+   "date": "2025-11-05",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 15.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 15.0,
+     "cashOut": 28.4
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 15.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 15.0,
+     "cashOut": 31.6
+    }
+   ],
+   "dateApprox": true
+  },
+  {
+   "date": "2025-12-08",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 29.8
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 3.55
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 22.15
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Ethan",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bowen",
+     "buyIn": 10.0,
+     "cashOut": 11.9
+    },
+    {
+     "name": "Alston",
+     "buyIn": 10.0,
+     "cashOut": 12.6
+    }
+   ]
+  },
+  {
+   "date": "2026-07-10",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 20.0,
+     "cashOut": 38.4
+    },
+    {
+     "name": "Henry",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Justin",
+     "buyIn": 20.0,
+     "cashOut": 97.9
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Alston",
+     "buyIn": 20.0,
+     "cashOut": 3.7
+    }
+   ]
+  },
+  {
+   "date": "2026-07-12",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 70.0,
+     "cashOut": 79.3
+    },
+    {
+     "name": "Henry",
+     "buyIn": 40.0,
+     "cashOut": 29.5
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 40.0,
+     "cashOut": 30.7
+    },
+    {
+     "name": "Justin",
+     "buyIn": 70.0,
+     "cashOut": 32.8
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Hayden",
+     "buyIn": 20.0,
+     "cashOut": 157.7
+    },
+    {
+     "name": "Alston",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Matt",
+     "buyIn": 30.0,
+     "cashOut": 0.0
+    }
+   ],
+   "dateApprox": true
+  },
+  {
+   "date": "2026-07-15",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 10.0,
+     "cashOut": 39.35
+    },
+    {
+     "name": "Henry",
+     "buyIn": 10.0,
+     "cashOut": 2.5
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Alston",
+     "buyIn": 10.0,
+     "cashOut": 0.0
+    }
+   ],
+   "dateApprox": true
+  },
+  {
+   "date": "2026-07-19",
+   "players": [
+    {
+     "name": "Jervis",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Henry",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Bruce",
+     "buyIn": 70.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Chenyou",
+     "buyIn": 40.0,
+     "cashOut": 31.0
+    },
+    {
+     "name": "Alston",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Matt",
+     "buyIn": 40.0,
+     "cashOut": 0.0
+    },
+    {
+     "name": "Alice",
+     "buyIn": 20.0,
+     "cashOut": 0.0
+    }
+   ],
+   "dateApprox": true
+  }
+ ]
+}
