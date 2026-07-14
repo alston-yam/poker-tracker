@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPlayer, getPlayerGames, getPlayerProfit, getPlayerSettleItems } from "@/lib/queries";
-import { markSettleItemPaid, removeSettleItem } from "../../settlements/actions";
+import { markSettleItemPaid, undoSettleItem, removeSettleItem } from "../../settlements/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -81,11 +81,18 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                   <span className="num">{money(s.amount)}</span>
                   {s.paidAt && <span> · {s.paidAt}</span>}
                 </span>
-                <form action={removeSettleItem.bind(null, s.id)}>
-                  <button type="submit" className="text-xs hover:text-negative">
-                    Remove
-                  </button>
-                </form>
+                <span className="flex gap-3 shrink-0">
+                  <form action={undoSettleItem.bind(null, s.id)}>
+                    <button type="submit" className="text-xs hover:text-foreground">
+                      Undo
+                    </button>
+                  </form>
+                  <form action={removeSettleItem.bind(null, s.id)}>
+                    <button type="submit" className="text-xs hover:text-negative">
+                      Remove
+                    </button>
+                  </form>
+                </span>
               </li>
             ))}
           </ul>

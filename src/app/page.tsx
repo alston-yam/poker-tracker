@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getPlayerTotals, getPendingSettleItems, getPaidSettleItems } from "@/lib/queries";
-import { markSettleItemPaid, removeSettleItem } from "./settlements/actions";
+import { markSettleItemPaid, undoSettleItem, removeSettleItem } from "./settlements/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -9,17 +9,47 @@ function money(n: number) {
   return `${sign}$${Math.abs(n).toFixed(2)}`;
 }
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ sort?: string }>;
+}) {
+  const { sort } = await searchParams;
+  const sortMode = sort === "recent" ? "recent" : "earnings";
+
   const [totals, pending, paid] = await Promise.all([
     getPlayerTotals(),
     getPendingSettleItems(),
     getPaidSettleItems(),
   ]);
 
+  const sortedTotals = [...totals].sort((a, b) => {
+    if (sortMode === "recent") {
+      return (b.lastPlayed ?? "").localeCompare(a.lastPlayed ?? "");
+    }
+    return b.profit - a.profit;
+  });
+
   return (
     <div className="flex flex-col gap-10">
       <section>
-        <h1 className="text-lg font-semibold mb-4">Balances</h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-lg font-semibold">Balances</h1>
+          <div className="flex gap-3 text-xs">
+            <Link
+              href="/?sort=earnings"
+              className={sortMode === "earnings" ? "font-medium" : "text-muted hover:text-foreground"}
+            >
+              Total earnings
+            </Link>
+            <Link
+              href="/?sort=recent"
+              className={sortMode === "recent" ? "font-medium" : "text-muted hover:text-foreground"}
+            >
+              Most recent
+            </Link>
+          </div>
+        </div>
         {totals.length === 0 ? (
           <p className="text-muted text-sm">No players yet. Add a game to get started.</p>
         ) : (
@@ -33,7 +63,7 @@ export default async function Home() {
               </tr>
             </thead>
             <tbody>
-              {totals.map((t) => (
+              {sortedTotals.map((t) => (
                 <tr key={t.id} className="border-b border-border last:border-0">
                   <td className="py-2">
                     <Link href={`/players/${t.id}`} className="hover:underline">
@@ -104,11 +134,18 @@ export default async function Home() {
                   <span className="num">{money(s.amount)}</span>
                   {s.paidAt && <span> · {s.paidAt}</span>}
                 </span>
-                <form action={removeSettleItem.bind(null, s.id)}>
-                  <button type="submit" className="text-xs hover:text-negative">
-                    Remove
-                  </button>
-                </form>
+                <span className="flex gap-3 shrink-0">
+                  <form action={undoSettleItem.bind(null, s.id)}>
+                    <button type="submit" className="text-xs hover:text-foreground">
+                      Undo
+                    </button>
+                  </form>
+                  <form action={removeSettleItem.bind(null, s.id)}>
+                    <button type="submit" className="text-xs hover:text-negative">
+                      Remove
+                    </button>
+                  </form>
+                </span>
               </li>
             ))}
           </ul>

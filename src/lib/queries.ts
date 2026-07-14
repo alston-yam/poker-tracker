@@ -6,6 +6,7 @@ export type PlayerTotal = Player & {
   profit: number;
   balance: number;
   gamesPlayed: number;
+  lastPlayed: string | null;
 };
 
 export type SettleItem = {
@@ -49,11 +50,14 @@ export async function getPlayerTotals(): Promise<PlayerTotal[]> {
     select p.id, p.name, p.account,
       coalesce(g.profit, 0)::float as profit,
       (coalesce(s_in.received, 0) - coalesce(s_out.owed, 0))::float as balance,
-      coalesce(g.games_played, 0)::int as "gamesPlayed"
+      coalesce(g.games_played, 0)::int as "gamesPlayed",
+      g.last_played::text as "lastPlayed"
     from players p
     left join (
-      select player_id, sum(cash_out - buy_in) as profit, count(*) as games_played
-      from entries group by player_id
+      select e.player_id, sum(e.cash_out - e.buy_in) as profit, count(*) as games_played,
+        max(g.game_date) as last_played
+      from entries e join games g on g.id = e.game_id
+      group by e.player_id
     ) g on g.player_id = p.id
     left join (
       select from_player_id, sum(amount) as owed from settle_items

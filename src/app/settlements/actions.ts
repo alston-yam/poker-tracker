@@ -9,6 +9,12 @@ export async function markSettleItemPaid(id: number) {
   revalidatePath("/players");
 }
 
+export async function undoSettleItem(id: number) {
+  await sql`update settle_items set status = 'pending', paid_at = null where id = ${id}`;
+  revalidatePath("/");
+  revalidatePath("/players");
+}
+
 export async function removeSettleItem(id: number) {
   await sql`delete from settle_items where id = ${id}`;
   revalidatePath("/");
