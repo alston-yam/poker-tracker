@@ -8,15 +8,17 @@ export type PlayerTotal = Player & {
   gamesPlayed: number;
 };
 
-export type Settlement = {
+export type SettleItem = {
   id: number;
+  gameId: number | null;
+  gameDate: string | null;
   fromId: number;
   fromName: string;
   toId: number;
   toName: string;
   amount: number;
-  settledAt: string;
-  note: string | null;
+  status: "pending" | "paid";
+  paidAt: string | null;
 };
 
 export type GameEntry = {
@@ -41,13 +43,12 @@ export async function getPlayers(): Promise<Player[]> {
 }
 
 // profit = raw lifetime result from games only.
-// balance = profit adjusted for settlements already paid/received; this is
-// what's actually still owed and drives the "Settle up" list.
+// balance = net of pending settle items; what's still owed right now.
 export async function getPlayerTotals(): Promise<PlayerTotal[]> {
   const rows = await sql`
     select p.id, p.name, p.account,
       coalesce(g.profit, 0)::float as profit,
-      (coalesce(g.profit, 0) + coalesce(s_out.paid, 0) - coalesce(s_in.received, 0))::float as balance,
+      (coalesce(s_in.received, 0) - coalesce(s_out.owed, 0))::float as balance,
       coalesce(g.games_played, 0)::int as "gamesPlayed"
     from players p
     left join (
@@ -55,12 +56,14 @@ export async function getPlayerTotals(): Promise<PlayerTotal[]> {
       from entries group by player_id
     ) g on g.player_id = p.id
     left join (
-      select from_player_id, sum(amount) as paid from settlements group by from_player_id
+      select from_player_id, sum(amount) as owed from settle_items
+      where status = 'pending' group by from_player_id
     ) s_out on s_out.from_player_id = p.id
     left join (
-      select to_player_id, sum(amount) as received from settlements group by to_player_id
+      select to_player_id, sum(amount) as received from settle_items
+      where status = 'pending' group by to_player_id
     ) s_in on s_in.to_player_id = p.id
-    order by balance desc
+    order by profit desc
   `;
   return rows as PlayerTotal[];
 }
@@ -78,43 +81,52 @@ export async function getPlayerProfit(id: number): Promise<number> {
   return (rows[0] as { profit: number }).profit;
 }
 
-export async function getPlayerBalance(id: number): Promise<number> {
+export async function getPendingSettleItems(): Promise<SettleItem[]> {
   const rows = await sql`
-    select
-      (coalesce((select sum(cash_out - buy_in) from entries where player_id = ${id}), 0)
-        + coalesce((select sum(amount) from settlements where from_player_id = ${id}), 0)
-        - coalesce((select sum(amount) from settlements where to_player_id = ${id}), 0)
-      )::float as balance
+    select si.id, si.game_id as "gameId", g.game_date::text as "gameDate",
+      si.from_player_id as "fromId", pf.name as "fromName",
+      si.to_player_id as "toId", pt.name as "toName",
+      si.amount::float as amount, si.status, si.paid_at::text as "paidAt"
+    from settle_items si
+    join players pf on pf.id = si.from_player_id
+    join players pt on pt.id = si.to_player_id
+    left join games g on g.id = si.game_id
+    where si.status = 'pending'
+    order by g.game_date asc, si.id asc
   `;
-  return (rows[0] as { balance: number }).balance;
+  return rows as SettleItem[];
 }
 
-export async function getPlayerSettlements(id: number): Promise<Settlement[]> {
+export async function getPaidSettleItems(): Promise<SettleItem[]> {
   const rows = await sql`
-    select s.id, s.from_player_id as "fromId", pf.name as "fromName",
-      s.to_player_id as "toId", pt.name as "toName",
-      s.amount::float as amount, s.settled_at::text as "settledAt", s.note
-    from settlements s
-    join players pf on pf.id = s.from_player_id
-    join players pt on pt.id = s.to_player_id
-    where s.from_player_id = ${id} or s.to_player_id = ${id}
-    order by s.settled_at desc, s.id desc
+    select si.id, si.game_id as "gameId", g.game_date::text as "gameDate",
+      si.from_player_id as "fromId", pf.name as "fromName",
+      si.to_player_id as "toId", pt.name as "toName",
+      si.amount::float as amount, si.status, si.paid_at::text as "paidAt"
+    from settle_items si
+    join players pf on pf.id = si.from_player_id
+    join players pt on pt.id = si.to_player_id
+    left join games g on g.id = si.game_id
+    where si.status = 'paid'
+    order by si.paid_at desc, si.id desc
   `;
-  return rows as Settlement[];
+  return rows as SettleItem[];
 }
 
-export async function getSettlements(): Promise<Settlement[]> {
+export async function getPlayerSettleItems(id: number): Promise<SettleItem[]> {
   const rows = await sql`
-    select s.id, s.from_player_id as "fromId", pf.name as "fromName",
-      s.to_player_id as "toId", pt.name as "toName",
-      s.amount::float as amount, s.settled_at::text as "settledAt", s.note
-    from settlements s
-    join players pf on pf.id = s.from_player_id
-    join players pt on pt.id = s.to_player_id
-    where s.note is distinct from 'Historical settle-up (pre-app)'
-    order by s.settled_at desc, s.id desc
+    select si.id, si.game_id as "gameId", g.game_date::text as "gameDate",
+      si.from_player_id as "fromId", pf.name as "fromName",
+      si.to_player_id as "toId", pt.name as "toName",
+      si.amount::float as amount, si.status, si.paid_at::text as "paidAt"
+    from settle_items si
+    join players pf on pf.id = si.from_player_id
+    join players pt on pt.id = si.to_player_id
+    left join games g on g.id = si.game_id
+    where si.from_player_id = ${id} or si.to_player_id = ${id}
+    order by si.status asc, g.game_date desc, si.id desc
   `;
-  return rows as Settlement[];
+  return rows as SettleItem[];
 }
 
 export async function getPlayerGames(id: number): Promise<

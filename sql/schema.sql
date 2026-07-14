@@ -23,16 +23,17 @@ create table if not exists entries (
 create index if not exists entries_game_idx on entries(game_id);
 create index if not exists entries_player_idx on entries(player_id);
 
-create table if not exists settlements (
+create table if not exists settle_items (
   id serial primary key,
+  game_id int references games(id) on delete cascade,
   from_player_id int not null references players(id) on delete cascade,
   to_player_id int not null references players(id) on delete cascade,
   amount numeric(10,2) not null,
-  settled_at date not null default current_date,
-  note text,
+  status text not null default 'pending',
+  paid_at date,
   created_at timestamptz not null default now()
 );
 
-create index if not exists settlements_from_idx on settlements(from_player_id);
-create index if not exists settlements_to_idx on settlements(to_player_id);
+create index if not exists settle_items_game_idx on settle_items(game_id);
+create index if not exists settle_items_status_idx on settle_items(status);
 

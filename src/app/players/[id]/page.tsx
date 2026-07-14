@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPlayer, getPlayerGames, getPlayerProfit, getPlayerBalance, getPlayerSettlements } from "@/lib/queries";
-import { deleteSettlement } from "../../settlements/actions";
+import { getPlayer, getPlayerGames, getPlayerProfit, getPlayerSettleItems } from "@/lib/queries";
+import { markSettleItemPaid, removeSettleItem } from "../../settlements/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -16,41 +16,74 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   const player = await getPlayer(playerId);
   if (!player) notFound();
 
-  const [games, profit, balance, settlements] = await Promise.all([
+  const [games, profit, settleItems] = await Promise.all([
     getPlayerGames(playerId),
     getPlayerProfit(playerId),
-    getPlayerBalance(playerId),
-    getPlayerSettlements(playerId),
+    getPlayerSettleItems(playerId),
   ]);
+
+  const pending = settleItems.filter((s) => s.status === "pending");
+  const paid = settleItems.filter((s) => s.status === "paid");
+  const owed = pending.reduce(
+    (sum, s) => sum + (s.toId === playerId ? s.amount : -s.amount),
+    0
+  );
 
   return (
     <div className="flex flex-col gap-8">
       <div>
         <h1 className="text-lg font-semibold">{player.name}</h1>
         {player.account && <p className="text-sm text-muted num mt-1">{player.account}</p>}
-        <p className={`text-2xl mt-2 num ${balance > 0 ? "text-positive" : balance < 0 ? "text-negative" : ""}`}>
-          {money(balance)}
+        <p className={`text-2xl mt-2 num ${owed > 0 ? "text-positive" : owed < 0 ? "text-negative" : ""}`}>
+          {money(owed)}
         </p>
         <p className="text-xs text-muted mt-1">
           still owed / owing · lifetime game result {money(profit)}
         </p>
       </div>
 
-      {settlements.length > 0 && (
+      {pending.length > 0 && (
         <section>
-          <h2 className="text-sm text-muted mb-3">Settlements</h2>
+          <h2 className="text-sm text-muted mb-3">Pending</h2>
           <ul className="flex flex-col gap-1.5 text-sm">
-            {settlements.map((s) => (
+            {pending.map((s) => (
+              <li key={s.id} className="flex items-center justify-between">
+                <span>
+                  <span className="font-medium">{s.fromName}</span>
+                  <span className="text-muted"> pays </span>
+                  <span className="font-medium">{s.toName}</span>{" "}
+                  <span className="num">{money(s.amount)}</span>
+                  {s.gameDate && <span className="text-muted"> · {s.gameDate}</span>}
+                </span>
+                <form action={markSettleItemPaid.bind(null, s.id)}>
+                  <button
+                    type="submit"
+                    className="text-xs border border-border rounded px-2 py-1 hover:bg-surface"
+                  >
+                    Mark as paid
+                  </button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {paid.length > 0 && (
+        <section>
+          <h2 className="text-sm text-muted mb-3">Settled</h2>
+          <ul className="flex flex-col gap-1.5 text-sm">
+            {paid.map((s) => (
               <li key={s.id} className="flex items-center justify-between text-muted">
                 <span>
                   <span className="text-foreground">{s.fromName}</span> paid{" "}
                   <span className="text-foreground">{s.toName}</span>{" "}
                   <span className="num">{money(s.amount)}</span>
-                  <span> · {s.settledAt}</span>
+                  {s.paidAt && <span> · {s.paidAt}</span>}
                 </span>
-                <form action={deleteSettlement.bind(null, s.id)}>
+                <form action={removeSettleItem.bind(null, s.id)}>
                   <button type="submit" className="text-xs hover:text-negative">
-                    Undo
+                    Remove
                   </button>
                 </form>
               </li>

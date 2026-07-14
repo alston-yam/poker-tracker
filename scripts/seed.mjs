@@ -48,50 +48,6 @@ async function main() {
     count += 1;
   }
 
-  // Historical settle-up: everything before the most recent game in the old
-  // sheet had already been paid off in real life, so seed matching
-  // settlement records dated at the second-to-last game.
-  if (seed.games.length > 1) {
-    const priorGames = seed.games.slice(0, -1);
-    const balances = {};
-    for (const g of priorGames) {
-      for (const p of g.players) {
-        balances[p.name] = (balances[p.name] || 0) + (p.cashOut - p.buyIn);
-      }
-    }
-    const EPS = 0.005;
-    const debtors = Object.entries(balances)
-      .filter(([, v]) => v < -EPS)
-      .map(([name, v]) => ({ name, amount: -v }))
-      .sort((a, b) => b.amount - a.amount);
-    const creditors = Object.entries(balances)
-      .filter(([, v]) => v > EPS)
-      .map(([name, v]) => ({ name, amount: v }))
-      .sort((a, b) => b.amount - a.amount);
-
-    const settledAt = priorGames[priorGames.length - 1].date;
-    let i = 0;
-    let j = 0;
-    let settleCount = 0;
-    while (i < debtors.length && j < creditors.length) {
-      const d = debtors[i];
-      const c = creditors[j];
-      const amount = Math.min(d.amount, c.amount);
-      if (amount > EPS) {
-        await sql`
-          insert into settlements (from_player_id, to_player_id, amount, settled_at, note)
-          values (${playerIds[d.name]}, ${playerIds[c.name]}, ${Math.round(amount * 100) / 100}, ${settledAt}, 'Historical settle-up (pre-app)')
-        `;
-        settleCount += 1;
-      }
-      d.amount -= amount;
-      c.amount -= amount;
-      if (d.amount <= EPS) i += 1;
-      if (c.amount <= EPS) j += 1;
-    }
-    console.log(`Seeded ${settleCount} historical settlements (through ${settledAt}).`);
-  }
-
   console.log(`Seeded ${seed.players.length} players, ${count} games.`);
 }
 
