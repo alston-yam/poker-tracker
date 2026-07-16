@@ -1,6 +1,16 @@
 import Link from "next/link";
-import { getPlayerTotals, getPendingSettleItems, getPaidSettleItems } from "@/lib/queries";
-import { markSettleItemPaid, undoSettleItem, removeSettleItem } from "./settlements/actions";
+import {
+  getPlayerTotals,
+  getPendingSettleItems,
+  getAwaitingConfirmationSettleItems,
+  getPaidSettleItems,
+} from "@/lib/queries";
+import {
+  markSettleItemPaid,
+  confirmSettleItem,
+  undoSettleItem,
+  removeSettleItem,
+} from "./settlements/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -17,9 +27,10 @@ export default async function Home({
   const { sort } = await searchParams;
   const sortMode = sort === "recent" ? "recent" : "earnings";
 
-  const [totals, pending, paid] = await Promise.all([
+  const [totals, pending, awaiting, paid] = await Promise.all([
     getPlayerTotals(),
     getPendingSettleItems(),
+    getAwaitingConfirmationSettleItems(),
     getPaidSettleItems(),
   ]);
 
@@ -121,6 +132,43 @@ export default async function Home({
           </ul>
         )}
       </section>
+
+      {awaiting.length > 0 && (
+        <section>
+          <h2 className="text-sm font-medium mb-3">Awaiting confirmation</h2>
+          <ul className="flex flex-col gap-2 text-sm">
+            {awaiting.map((tx) => (
+              <li
+                key={tx.id}
+                className="flex items-center justify-between border border-border rounded px-3 py-2 bg-surface"
+              >
+                <span>
+                  <span className="font-medium">{tx.fromName}</span>
+                  <span className="text-muted"> says they paid </span>
+                  <span className="font-medium">{tx.toName}</span>
+                  {tx.gameDate && <span className="text-muted"> · {tx.gameDate}</span>}
+                </span>
+                <span className="flex items-center gap-3">
+                  <span className="num">{money(tx.amount)}</span>
+                  <form action={undoSettleItem.bind(null, tx.id)}>
+                    <button type="submit" className="text-xs hover:text-foreground">
+                      Undo
+                    </button>
+                  </form>
+                  <form action={confirmSettleItem.bind(null, tx.id)}>
+                    <button
+                      type="submit"
+                      className="text-xs border border-border rounded px-2 py-1 hover:bg-background"
+                    >
+                      Confirm received
+                    </button>
+                  </form>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {paid.length > 0 && (
         <section>

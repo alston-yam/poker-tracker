@@ -18,7 +18,7 @@ export type SettleItem = {
   toId: number;
   toName: string;
   amount: number;
-  status: "pending" | "paid";
+  status: "pending" | "awaiting_confirmation" | "paid";
   paidAt: string | null;
 };
 
@@ -44,7 +44,7 @@ export async function getPlayers(): Promise<Player[]> {
 }
 
 // profit = raw lifetime result from games only.
-// balance = net of pending settle items; what's still owed right now.
+// balance = net of items not yet fully confirmed paid; what's still outstanding.
 export async function getPlayerTotals(): Promise<PlayerTotal[]> {
   const rows = await sql`
     select p.id, p.name, p.account,
@@ -61,11 +61,11 @@ export async function getPlayerTotals(): Promise<PlayerTotal[]> {
     ) g on g.player_id = p.id
     left join (
       select from_player_id, sum(amount) as owed from settle_items
-      where status = 'pending' group by from_player_id
+      where status in ('pending', 'awaiting_confirmation') group by from_player_id
     ) s_out on s_out.from_player_id = p.id
     left join (
       select to_player_id, sum(amount) as received from settle_items
-      where status = 'pending' group by to_player_id
+      where status in ('pending', 'awaiting_confirmation') group by to_player_id
     ) s_in on s_in.to_player_id = p.id
     order by profit desc
   `;
@@ -96,6 +96,22 @@ export async function getPendingSettleItems(): Promise<SettleItem[]> {
     join players pt on pt.id = si.to_player_id
     left join games g on g.id = si.game_id
     where si.status = 'pending'
+    order by g.game_date asc, si.id asc
+  `;
+  return rows as SettleItem[];
+}
+
+export async function getAwaitingConfirmationSettleItems(): Promise<SettleItem[]> {
+  const rows = await sql`
+    select si.id, si.game_id as "gameId", g.game_date::text as "gameDate",
+      si.from_player_id as "fromId", pf.name as "fromName",
+      si.to_player_id as "toId", pt.name as "toName",
+      si.amount::float as amount, si.status, si.paid_at::text as "paidAt"
+    from settle_items si
+    join players pf on pf.id = si.from_player_id
+    join players pt on pt.id = si.to_player_id
+    left join games g on g.id = si.game_id
+    where si.status = 'awaiting_confirmation'
     order by g.game_date asc, si.id asc
   `;
   return rows as SettleItem[];
